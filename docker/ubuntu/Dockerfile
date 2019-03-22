@@ -7,7 +7,7 @@ ENV REFRESHED_AT 2015-03-02
 COPY . /opt/sources/ifcopenshell
 
 RUN apt-get -y update && \
-    apt-get -y install git swig cmake gcc g++ libftgl-dev libtbb2 libtbb-dev libboost-all-dev libgl1-mesa-dev libfreetype6-dev liboce-modeling-dev opencollada-dev liboce-foundation-dev blender && \
+    apt-get -y install git swig python-all-dev cmake gcc g++ libftgl-dev libtbb2 libtbb-dev libboost-all-dev libgl1-mesa-dev libfreetype6-dev liboce-modeling-dev opencollada-dev liboce-foundation-dev blender && \
     rm -rf /var/lib/apt/lists/* && \
     cmake -B/opt/sources/ifcopenshell/build -H/opt/sources/ifcopenshell/cmake && \
     cd /opt/sources/ifcopenshell/build && make && make install; \ 
